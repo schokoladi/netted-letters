@@ -5,7 +5,7 @@ include $app_path.'config.php';
 
 $app_url = $website_url.$app_path;
 
-if ($data_url=="") $data = $app_path."data.csv";
+if ($data_url=="") $data = $app_path."data_nl.csv";
 else $data = $data_url;
 
 // load data
@@ -267,7 +267,7 @@ li { 	margin: 0; padding: 0; }
 #m li em { font-style: normal; cursor: pointer; }
 #m li em:hover {text-decoration: underline;}
 
-/* authors */
+/* collaborators */
 #r ul { margin-top: .5em; float: right;}
 #r li { padding: 0; margin: .15em 0; line-height: 1.2em; font-weight: 100; }
 #r h2 { margin-bottom: 1.1em; text-align: right; direction: rtl; hyphens: manual; }
@@ -411,9 +411,9 @@ var vin = -1; // index of keyword or person
 var hash = '';
 var l = []; var m = []; var r = [];
 var lm = []; // left → middle, i.e., from areas to items
-var rm = []; // right → middle, i.e., from authors to items
+var rm = []; // right → middle, i.e., from collaborators to items
 var ml = []; // middle → left, i.e., from items to areas
-var mr = []; // middle → right, i.e., from items to authors
+var mr = []; // middle → right, i.e., from items to collaborators
 var m_iv = []; // items in view
 var m_bb = []; // items bounding boxes
 var vw = document.documentElement.clientWidth/100;
@@ -501,7 +501,7 @@ function links() {
 		}
 	}
 	
-	// authors
+	// collaborators
 	for (var ri = 0; ri < rm.length; ri++) {
 		var re = r[ri];
 		var pname = re.textContent;
@@ -603,7 +603,7 @@ function getIndex(el) {
     return i;
 }
 
-function authors() {
+function collaborators() {
 
 	var people = [];
 	for (var ri = 0; ri < rm.length; ri++) {
@@ -718,7 +718,7 @@ function redraw() {
 
 	items_bb();	
 	areas();
-	authors();	
+	collaborators();
 	links();
 	
 	for (var i = 0; i < redraw_timeouts.length; i++) clearTimeout(redraw_timeouts[i]);
@@ -740,7 +740,7 @@ function redraw_staged() {
 	
 	redraw_timeouts[0] = setTimeout(function() {
 		areas();
-		authors();
+		collaborators();
 		// links();
 	}, 500);
 

@@ -1,0 +1,5 @@
+type,title,link,info,topics,collaborators
+Publications,“Test Entry”,https://nettedletters.org/,This is a Netted Letters Test,Test Topic 1;Another Topic, Christina Zimmermann
+Publications,“Another entry”,https://nettedletters.org/,This is a Netted Letters Test with some more text.This is a Netted Letters Test with some more text.,Test Topic 1;Another Topic;Third Topic even, Christina Zimmermann;Julius Lange
+Publications,“Test Three”,https://hslu.ch,Hello World.,Another Topic;Third Topic even,Julius Lange
+Publications,“Test Number four”,https://hslu.ch,This is entry number four, test.,Test Topic 1;Third Topic even,Julius Lange
